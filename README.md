@@ -10,7 +10,9 @@ Examples of problems with current + next steps
 
 # Structure
 
-Web framework: Flask, React
+Frontend: HTML5 Canvas, React?
+
+Backend: Flask, Fetch API
 
 Testing framework: pytest
 

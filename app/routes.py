@@ -13,6 +13,7 @@ def index():
     return render_template('paint.html', title='Home', user=user)
 @app.route('/paint', methods =['GET', 'POST'])
 def predict():
+    np.set_printoptions(suppress=True)
     # request --> base64
     base64_image = request.json['image']
     
@@ -43,9 +44,11 @@ def predict():
     net = NeuralNetwork(input_size, hidden_sizes, output_size, num_layers, opt="SGD") #opt doesn't matter
     net.params = params #please 
 
-    #predict, send probabilities (class name is 0-9 nice)
-    prediction = np.round(net.forward(doodle), 6)
-    prediction_dict = {i:float(prob) for i, prob in enumerate(prediction)}
+    #predict
+    prediction = np.round(net.forward(doodle), 6) #probabilities
+    sorted_classes = np.argsort(prediction)[::-1] #classes
+    prediction_pairs = [ (str(num), str(float(prediction[num]))) for num in sorted_classes] #strings
+    # print("prediction_pairs: ", prediction_pairs) 
 
     # return prediction, this is just shape for now
-    return jsonify({'prediction': str(prediction_dict)})
+    return jsonify(prediction_pairs)
