@@ -30,4 +30,6 @@ Running pytest
 
 # Release notes
 
+0.1: digit classifier on draw
+
 # Related projects
