@@ -325,10 +325,10 @@ def test_mse_time():
     xb = np.array([1, 2, 3]) #pretend this is one sample, ig you hope len(xb) == # outputs
     yb = np.array([4, 2, 5])
 
-    t0 = time.time()
-    msenumba = mse_numba(yA, xA)
-    t1 = time.time()
-    total = t1-t0
+    # t0 = time.time()
+    # msenumba = mse_numba(yA, xA)
+    # t1 = time.time()
+    # total = t1-t0
 
     t0 = time.time()
     msenet = tinynet.mse(yA, xA)
