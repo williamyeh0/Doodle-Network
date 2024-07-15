@@ -13,6 +13,7 @@ var canvas_data = {"pencil": [], "eraser": []}
 function reset(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     canvas_data = { "pencil": [], "eraser": [] }
+    console.log(canvas_data)
 }
         
 // pencil tool
@@ -41,6 +42,7 @@ function pencil(){
         
     canvas.onmouseup = function(e){
         hold = false;
+        console.log(canvas_data)
     };
         
     canvas.onmouseout = function(e){
@@ -81,6 +83,7 @@ function eraser(){
         
     canvas.onmouseup = function(e){
         hold = false;
+        console.log(canvas_data)
     };
         
     canvas.onmouseout = function(e){
@@ -91,9 +94,58 @@ function eraser(){
         ctx.lineTo(curX, curY);
         ctx.strokeStyle = "#000000";
         ctx.stroke();
-        canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+        canvas_data.eraser.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, "thick": ctx.lineWidth, "color": ctx.strokeStyle });
     }    
 }  
+
+function getPredictionData(){
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const base64Image = canvas.toDataURL();
+
+    fetch('/paint', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ image: base64Image }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Prediction:', data.prediction);
+        // displayPredictionResults(data.prediction);
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// function displayPredictionResults(prediction) {
+//     console.log("predictions in display(): ", prediction)
+//     const resultsContainer = document.getElementById('predictionResults');
+//     resultsContainer.innerHTML = ''; // Clear previous results
+
+//     // Sort predictions by probability (descending order)
+//     const sortedPredictions = Object.entries(prediction);
+//         // .sort((a, b) => b[1] - a[1]);
+    
+//     console.log(sortedPredictions)
+
+//     // Create a table to display results
+//     const table = document.createElement('table');
+//     table.innerHTML = `
+//         <tr>
+//             <th>Class</th>
+//             <th>Probability</th>
+//         </tr>
+//     `;
+
+//     sortedPredictions.forEach(([className, probability]) => {
+//         const row = table.insertRow();
+//         row.innerHTML = `
+//             <td>${className}</td>
+//             <td>${(probability * 100).toFixed(4)}%</td>
+//         `;
+//     });
+//     resultsContainer.appendChild(table);
+// }
 
 function save(){
     var filename = document.getElementById("fname").value;

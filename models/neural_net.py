@@ -50,6 +50,7 @@ class NeuralNetwork:
 
         self.params = {}
         self.adam_params = {} 
+
         for i in range(1, num_layers + 1):
             self.params["W" + str(i)] = np.random.randn(sizes[i - 1], sizes[i]) / np.sqrt(sizes[i - 1])
             self.params["b" + str(i)] = np.zeros(sizes[i])

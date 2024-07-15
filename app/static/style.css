@@ -48,4 +48,12 @@
     width     : 80px;
     height    : 25px;
     border    : 1px solid;
-}                
+}   
+
+#predictbutton {
+    /* background: #358128;  */
+    color     : #f3f3f3;
+    width     : 80px;
+    height    : 25px;
+    border    : 1px solid;
+}   
