@@ -3,18 +3,6 @@
 from typing import Sequence
 
 import numpy as np
-from numba import njit 
-from numba import prange
-
-@njit(cache=True,fastmath=False, parallel=True)
-def mse_numba(y: np.ndarray, p: np.ndarray) -> np.ndarray:
-    loss = 0.0
-    for i in prange(p.shape[0]):
-        for j in range(p.shape[1]):
-            loss = loss + (p[i,j] - y[i,j])**2
-    # Average over number of output nodes
-    loss = loss / (p.shape[1] * p.shape[0])
-    return loss
 
 class NeuralNetwork:
     """A multi-layer fully-connected neural network. The net has an input

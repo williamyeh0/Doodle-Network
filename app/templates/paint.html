@@ -1,0 +1,35 @@
+{% include "base.html" %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <body onload="pencil()">
+        <div>
+            <p><h2 id="title">Doodle</h2></p>
+        </div>
+        <p><table>
+            <tr>
+            <td>
+                <fieldset id="toolset">
+                <button id="penciltool" type="button" style="height: 25px; width: 100px;" onclick="pencil()">Pencil</button>
+                <br>
+                <br>
+                <br>
+                <button id="erasertool" type="button" style="height: 25px; width: 100px;" onclick="eraser()">Eraser</button> 
+                <br>
+                <br>
+                <br>
+                <button id="resettool" type="button" style="height: 25px; width: 100px;" onclick="reset()">Reset</button> 
+                </fieldset>
+            </td>
+            <td>
+                <canvas id="paint" width="450" height="450" style="border: 5px solid #000000;"></canvas>
+            </td>
+            </tr>
+        </table></p>
+        <fieldset id="colorset">
+        <table>
+            </table>
+            <label>file name</label><input id="fname" type="text"><button id="save" onclick="save()">Save</button>
+            </fieldset>
+            <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+            <script src=" {{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

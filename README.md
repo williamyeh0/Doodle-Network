@@ -10,7 +10,7 @@ Examples of problems with current + next steps
 
 # Structure
 
-Web framework: Flask
+Web framework: Flask, React
 
 Testing framework: pytest
 

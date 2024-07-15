@@ -1,0 +1,51 @@
+#toolset {
+    width     : 100px;
+    height    : 440px;
+    position  : absolute;
+    left      : 0px;
+    top       : 80px; 
+}
+
+#paint {
+    background-color: #000000;
+    position  : absolute;
+    left      : 130px;
+    top       : 80px;
+}
+
+#colorset {
+    position  : absolute;
+    left      : 0px;
+    top       : 575px;
+    width     : 860px;
+}
+ 
+#title {
+    position  : absolute;
+    left      : 30px;
+    top : 25px;
+}
+
+#penciltool {
+    /* background: #358128;  */
+    color     : #f3f3f3;
+    width     : 80px;
+    height    : 25px;
+    border    : 1px solid;
+}
+
+#erasertool {
+    /* background: #358128;  */
+    color     : #f3f3f3;
+    width     : 80px;
+    height    : 25px;
+    border    : 1px solid;
+}
+
+#resettool {
+    /* background: #358128;  */
+    color     : #f3f3f3;
+    width     : 80px;
+    height    : 25px;
+    border    : 1px solid;
+}                
