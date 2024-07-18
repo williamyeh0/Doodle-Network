@@ -1,11 +1,22 @@
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, g
 from app import app
 from PIL import Image
 import base64
 import io
 import numpy as np
 from models.neural_net import NeuralNetwork
+import logging
+import uuid
+import time
 
+logging.basicConfig(level=logging.INFO)
+
+@app.before_request
+def before_request_func():
+    execution_id = uuid.uuid4()
+    g.start_time = time.time()
+    g.execution_id = execution_id
+    app.logger.info(f"Received request: {g.execution_id, request.url, request.method}")
 
 @app.route('/')
 def index():
@@ -13,6 +24,7 @@ def index():
     return render_template('paint.html', title='Home', user=user)
 @app.route('/paint', methods =['GET', 'POST'])
 def predict():
+    # app.logger.info(f"Received request: {request.url, request.method}") #logging
     np.set_printoptions(suppress=True)
     # request --> base64
     base64_image = request.json['image']

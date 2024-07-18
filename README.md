@@ -33,3 +33,56 @@ Running pytest
 0.1: digit classifier on draw
 
 # Related projects
+
+```
+Doodle-Network
+├─ .DS_Store
+├─ .dockerignore
+├─ .flaskenv
+├─ .gitignore
+├─ .pytest_cache
+│  ├─ .gitignore
+│  ├─ CACHEDIR.TAG
+│  ├─ README.md
+│  └─ v
+│     └─ cache
+│        ├─ lastfailed
+│        ├─ nodeids
+│        └─ stepwise
+├─ Dockerfile
+├─ LICENSE
+├─ README.md
+├─ __pycache__
+│  ├─ doodle.cpython-38.pyc
+│  └─ test_neural_net.cpython-38-pytest-8.2.0.pyc
+├─ app
+│  ├─ __init__.py
+│  ├─ __pycache__
+│  │  ├─ __init__.cpython-38.pyc
+│  │  └─ routes.cpython-38.pyc
+│  ├─ routes.py
+│  ├─ static
+│  │  ├─ script.js
+│  │  └─ style.css
+│  └─ templates
+│     ├─ base.html
+│     └─ paint.html
+├─ doodle.py
+├─ models
+│  ├─ .DS_Store
+│  ├─ __pycache__
+│  │  ├─ neural_net.cpython-38.pyc
+│  │  ├─ neural_net.mse_numba-9.py38.1.nbc
+│  │  ├─ neural_net.mse_numba-9.py38.2.nbc
+│  │  └─ neural_net.mse_numba-9.py38.nbi
+│  ├─ model_adam_params.npz
+│  ├─ model_hyperANDparams.npz
+│  ├─ model_params.npz
+│  └─ neural_net.py
+├─ requirements.txt
+└─ tests
+   ├─ __pycache__
+   │  └─ test_neural_net.cpython-38-pytest-8.2.0.pyc
+   └─ test_neural_net.py
+
+```

@@ -1,7 +1,5 @@
 numpy
-time
 matplotlib
-sklearn
-cv2
-torch
-
+scikit-learn
+flask
+gunicorn
