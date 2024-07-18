@@ -4,7 +4,11 @@ Neural network implemented in numpy that classifies user drawings.
 
 # Intro 
 
-Demo: video + link to demo
+Demo: 
+
+link: https://doodle-gly35dcupa-uc.a.run.app/
+
+![](https://github.com/Doodle-Network/doodle.gif)
 
 Examples of problems with current + next steps
 
