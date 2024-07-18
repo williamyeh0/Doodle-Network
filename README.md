@@ -8,7 +8,7 @@ Demo:
 
 link: https://doodle-gly35dcupa-uc.a.run.app/
 
-![](https://github.com/Doodle-Network/doodle.gif)
+![](https://github.com/williamyeh0/Doodle-Network/blob/main/doodle.gif)
 
 Examples of problems with current + next steps
 
