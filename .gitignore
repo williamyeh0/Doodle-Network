@@ -1,8 +1,5 @@
 /.pytest_cache 
+/neural_net_classification.ipynb
 neural_net_classification.ipynb
-models/model_params.npz
-models/model_adam_params.npz
-data/mean_images.npz
-data
-models/model_hyperANDparams.npz
+data/MNIST/raw/images
 /__pycache__
